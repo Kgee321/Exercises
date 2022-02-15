@@ -8,9 +8,10 @@ if price >= 10:
         percentage = price * 0.7
     else:
         percentage = price * 0.9
-    print("You get a discount of ${}, \n Your price is now ${}".format(percentage, price + percentage))
+    pp = price + percentage
+    print(f"You get a discount of {percentage}%, \nYour price is now ${pp:,.2f} (2dp)")
 else:
-    print("You do not get a discount, you price is still ${}".format(price))
+    print(f"You do not get a discount, you price is still ${price:,.2f} (2 dp)")
 
 
 
