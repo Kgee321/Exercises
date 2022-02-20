@@ -26,4 +26,3 @@ if counter == 10 or counter == 4:
     print("You ran out of guesses! Fail! Restart the game")
 else:
     print(f"Correct number! You got it in {total} guesses")
-
