@@ -24,6 +24,8 @@ while count <= int(people[0]):
 count2 = 0
 while count2 <= int(people[1]):
     cool = input().split()
+    item =[]
+     item.append(cool)
     count2 += 1
 
 
