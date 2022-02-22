@@ -20,37 +20,36 @@ while count <= int(people[0]):
     count += 1
 print(drinks)
 
-count2 = 0
+count2 = 1
 bad = 0
 mah = []
-while count2 <= int(people[1]):
+while count2 <= int(people[0]):
     hosts = input().split()
-    for i in drinks:
-        if int(hosts[1]) < drinks[0]:
-            bad += 1
+    for i in range(6):
+        if int(hosts[i+1]) < drinks[i]:
+            ek = drinks[i] - int(hosts[i+1])
+            bad = bad + ek
             print(bad)
-        elif int(hosts[2]) < drinks[1]:
-            bad += 1
-            print(bad)
-        elif int(hosts[3]) < drinks[2]:
-            bad += 1
-            print(bad)
-        elif int(hosts[4]) < drinks[3]:
-            bad += 1
-            print(bad)
-        elif int(hosts[5]) < drinks[4]:
-            bad += 1
-            print(bad)
-        elif int(hosts[6]) < drinks[5]:
-            bad += 1
-            print(bad)
-    if bad > 3:
-        mah.append("{} Disaster".format(hosts[0]))
-    elif 1 <= bad < 2:
-        mah.append("{} Mildly Successful".format(hosts[0]))
+    if bad >= 3:
+        mah.append("{} Disaster ({})".format(hosts[0], bad))
+    elif 1 <= bad <= 2:
+        mah.append("{} Mildly Successful ({})".format(hosts[0], bad))
     elif bad <= 0:
         mah.append("{} Successful".format(hosts[0]))
+    print(mah)
+    bad = 0
     count2 += 1
+
+count3 = 1
+while count3 <= int(people[1]):
+    who = input()
+    if who in mah:
+        print("yay")
+    else:
+        print("I failed")
+    count += 1
+
+
 
 for l in mah:
     print(l)
