@@ -13,10 +13,3 @@ for i in range(1, 8, 2):
     print(f"{symbol}{space}{symbol}")
 
 print("#" * 9)
-
-# for i in range(1, 9, 2):
-#     space = " " * (9-i)
-#     symbol = "#" * ((i+1)//2)
-#     print(f"{symbol}{space}{symbol}")
-#
-# print("#"*9)
