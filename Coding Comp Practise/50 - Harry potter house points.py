@@ -1,6 +1,10 @@
+"""COMPLETE!! - 10 points"""
+
 # Questions
 classes = input()
 ask = input()
+final = {}
+random = []
 
 # Variables
 g_score = 0
@@ -15,7 +19,6 @@ r = "Ravenclaw"
 while classes != "END":
     while ask != "0 0 0":
         ask = ask.split(' ', 2)
-        print(ask)
         ask[1].capitalize()
         if ask[1] == g:
             g_score += int(ask[2])
@@ -25,10 +28,18 @@ while classes != "END":
             s_score += int(ask[2])
         elif ask[1] == r:
             r_score += int(ask[2])
-        ask = input()
-    classes = input()
-print(f"{g}:{g_score}")
-print(f"{h}:{h_score}")
-print(f"{s}:{s_score}")
-print(f"{r}:{r_score}")
+        ask = input("Second")
+    ask = "1 1 1"
+    classes = input("First")
+
+final.update({g_score: g, h_score: h, s_score: s, r_score: r})
+
+for score in final:
+    random.append(score)
+
+random.sort()
+
+for i in range(1, 5):
+    print(i, final[random[-i]], random[-i])
+
 
